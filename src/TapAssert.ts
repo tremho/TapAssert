@@ -6,8 +6,9 @@ import { validate } from './TypeCheck'
  *
  * Use to instantiate a new TapAssert class
  *
- * @example import {TapAssert} from '@tremho/tap-assert'
- *          const assert = new TapAssert(t)
+ * @example
+ * import {TapAssert} from '@tremho/tap-assert'
+ * const assert = new TapAssert(t)
  */
 export class TapAssert {
   private readonly _t: any
@@ -59,8 +60,9 @@ export class TapAssert {
    * @param item - value to test
    * @param message - test label / description
    *
-   * @example const item = getAValue()
-   *          assert.isNull(item, 'Insure item is null here')
+   * @example
+   * const item = getAValue()
+   * assert.isNull(item, 'Insure item is null here')
    */
   isNull (item: any, message: string): boolean {
     return this.check(message, item === null, 'Expected null')
@@ -72,8 +74,9 @@ export class TapAssert {
    * @param item - value to test
    * @param message - test label / description
    *
-   * @example const item = getAValue()
-   *          assert.isNull(item, 'Insure item is not null here')
+   * @example
+   * const item = getAValue()
+   * assert.isNull(item, 'Insure item is not null here')
    */
   isNotNull (item: any, message: string): boolean {
     return this.check(message, item !== null, 'Expected not null')
@@ -85,8 +88,9 @@ export class TapAssert {
    * @param item - value to test
    * @param message - test label / description
    *
-   * @example const item = myObject?.someValue
-   *          assert.isDefined(item, 'someValue is defined')
+   * @example
+   * const item = myObject?.someValue
+   * assert.isDefined(item, 'someValue is defined')
    */
   isDefined (item: any, message: string): boolean {
     return this.check(message, typeof item !== 'undefined', 'Expected to not be undefined')
@@ -98,8 +102,9 @@ export class TapAssert {
    * @param item - value to test
    * @param message - test label / description
    *
-   * @example const item = myObject?.someValue
-   *          assert.isUndefined(item, 'someValue should be undefined here')
+   * @example
+   * const item = myObject?.someValue
+   * assert.isUndefined(item, 'someValue should be undefined here')
    */
   isUndefined (item: any, message: string): boolean {
     return this.check(message, typeof item === 'undefined', `Expected to be undefined. Got a '${typeof item}' value`)
@@ -112,8 +117,9 @@ export class TapAssert {
    * @param type - name of type
    * @param message - test label / description
    *
-   * @example const item = myObject?.someValue
-   *          assert.isType(item, 'string', 'someValue should be a string')
+   * @example
+   * const item = myObject?.someValue
+   * assert.isType(item, 'string', 'someValue should be a string')
    */
   isType (item: any, type: string, message: string): boolean {
     /* eslint valid-typeof: "off" */
@@ -127,8 +133,9 @@ export class TapAssert {
    * @param type - name of type
    * @param message - test label / description
    *
-   * @example const item = myObject?.someValue
-   *          assert.isNotType(item, 'object', 'someValue is not an object')
+   * @example
+   * const item = myObject?.someValue
+   * assert.isNotType(item, 'object', 'someValue is not an object')
    */
   isNotType (item: any, type: string, message: string): boolean {
     /* eslint valid-typeof: "off" */
@@ -142,8 +149,9 @@ export class TapAssert {
    * @param equivalent - value to test for equal
    * @param message - test label / description
    *
-   * @example const item = myObject?.someValue
-   *          assert.isEqual(item, 42, 'The answer is 42')
+   * @example
+   * const item = myObject?.someValue
+   * assert.isEqual(item, 42, 'The answer is 42')
    */
   isEqual (item: any, equivalent: any, message: string): boolean {
     const eqstr: string = equivalent.toString()
@@ -158,8 +166,9 @@ export class TapAssert {
    * @param equivalent - value to test for equal
    * @param message - test label / description
    *
-   * @example const item = myObject?.someValue
-   *          assert.isNotEqual(item, 0, 'The value must not be 0')
+   * @example
+   * const item = myObject?.someValue
+   * assert.isNotEqual(item, 0, 'The value must not be 0')
    */
   isNotEqual (item: any, equivalent: any, message: string): boolean {
     const itstr: string = item.toString()
@@ -172,8 +181,9 @@ export class TapAssert {
    * @param item - value to test
    * @param message - test label / description
    *
-   * @example const item = 'hello'
-   *          assert.isTruthy(item, 'Evaluates as true')
+   * @example
+   * const item = 'hello'
+   * assert.isTruthy(item, 'Evaluates as true')
    */
   isTruthy (item: any, message: string): boolean {
     const itstr: string = item.toString()
@@ -187,8 +197,9 @@ export class TapAssert {
    * @param item - value to test
    * @param message - test label / description
    *
-   * @example const item = ''
-   *          assert.isNotTruthy(item, 'Evaluates as false')
+   * @example
+   * const item = ''
+   * assert.isNotTruthy(item, 'Evaluates as false')
    */
   isNotTruthy (item: any, message: string): boolean {
     const itstr: string = item.toString()
@@ -300,7 +311,7 @@ export class TapAssert {
    *
    * @example assert([1,2,3], 2, 'array contains the value 2')
    * @example assert({foo:'bar'}, 'foo', 'object contains the property "foo"')
-   * @example assert('
+   * @example assert('It is a wonderful world, 'wonder', 'string contains substring "wonder"')
    */
   contains (item: any, target: any, message: string): boolean {
     const { contains, reason } = this.checkContains(item, target, false)
@@ -328,12 +339,13 @@ export class TapAssert {
    *
    * @param message - message to emit on skip
    *
-   * @example const feature = getFeatureObject()
-   *          if(feature.isEnabled) {
-   *               assert.isNotNull(feature.body, 'If are using this, it must not be null')
-   *          } else {
-   *              assert.skipped('This test skipped because feature is not enabled')
-   *          }
+   * @example
+   * const feature = getFeatureObject()
+   * if(feature.isEnabled) {
+   *    assert.isNotNull(feature.body, 'If using this, it must not be null')
+   * } else {
+   *    assert.skipped('This test skipped because feature is not enabled')
+   * }
    */
   skipped (message: string): void {
     this._t.skip({ name: message } as any)
@@ -403,7 +415,7 @@ export class TapAssert {
    *
    * ---
    * - _The [!] notation used above means the ! is optional (meaning 'not').  The brackets are notational only. Do not include in constraint._
-   * - _The <val> notation means place a value here. No brackets. Do not quote the value._
+   * - _The &lt;val&gt; notation means place a value here. No brackets. Do not quote the value._
    * - _Notation in parenthesis, such as (num), and (first, last) means include the parenthesis and replace the labels with values._
    * - _constraint directives are case-insensitive_
    *

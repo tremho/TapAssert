@@ -1,6 +1,6 @@
 {
   "name": "@tremho/tap-assert",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "a simple assertion library for using Tap JS the way I like to, leveraging only the tap.ok() method and emitting waypoint messages",
   "main": "build/TapAssert.js",
   "scripts": {

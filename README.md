@@ -108,6 +108,7 @@ See [Tap docs](https://node-tap.org/basics/) for more info.
 
 #### Release changeLog:
 
+-   `1.0.2` - minor doc updates
 -   `1.0.1` - updated readme, updated tests
 -   `1.0.0` - initial release
 
@@ -131,7 +132,7 @@ Use to instantiate a new TapAssert class
 
 ```javascript
 import {TapAssert} from '@tremho/tap-assert'
-         const assert = new TapAssert(t)
+const assert = new TapAssert(t)
 ```
 
 #### enableThrow
@@ -171,7 +172,7 @@ Assert that item passed is null.
 
 ```javascript
 const item = getAValue()
-         assert.isNull(item, 'Insure item is null here')
+assert.isNull(item, 'Insure item is null here')
 ```
 
 #### isNotNull
@@ -187,7 +188,7 @@ Assert that item passed is **_not_** null.
 
 ```javascript
 const item = getAValue()
-         assert.isNull(item, 'Insure item is not null here')
+assert.isNull(item, 'Insure item is not null here')
 ```
 
 #### isDefined
@@ -203,7 +204,7 @@ Assert that item passed is defined.
 
 ```javascript
 const item = myObject?.someValue
-         assert.isDefined(item, 'someValue is defined')
+assert.isDefined(item, 'someValue is defined')
 ```
 
 #### isUndefined
@@ -219,7 +220,7 @@ Assert that item passed is undefined.
 
 ```javascript
 const item = myObject?.someValue
-         assert.isUndefined(item, 'someValue should be undefined here')
+assert.isUndefined(item, 'someValue should be undefined here')
 ```
 
 #### isType
@@ -236,7 +237,7 @@ Assert that item passed is of a given type.
 
 ```javascript
 const item = myObject?.someValue
-         assert.isType(item, 'string', 'someValue should be a string')
+assert.isType(item, 'string', 'someValue should be a string')
 ```
 
 #### isNotType
@@ -253,7 +254,7 @@ Assert that item passed is **_not_** of a given type.
 
 ```javascript
 const item = myObject?.someValue
-         assert.isNotType(item, 'object', 'someValue is not an object')
+assert.isNotType(item, 'object', 'someValue is not an object')
 ```
 
 #### isEqual
@@ -270,7 +271,7 @@ Assert that item passed is equal to a given value.
 
 ```javascript
 const item = myObject?.someValue
-         assert.isEqual(item, 42, 'The answer is 42')
+assert.isEqual(item, 42, 'The answer is 42')
 ```
 
 #### isNotEqual
@@ -287,7 +288,7 @@ Assert that item passed is **_not_** equal to a given value.
 
 ```javascript
 const item = myObject?.someValue
-         assert.isNotEqual(item, 0, 'The value must not be 0')
+assert.isNotEqual(item, 0, 'The value must not be 0')
 ```
 
 #### isTruthy
@@ -303,7 +304,7 @@ Assert that item passed evaluates as 'truthy'.
 
 ```javascript
 const item = 'hello'
-         assert.isTruthy(item, 'Evaluates as true')
+assert.isTruthy(item, 'Evaluates as true')
 ```
 
 #### isNotTruthy
@@ -319,7 +320,7 @@ Assert that item passed evaluates as **_not_** 'truthy'.
 
 ```javascript
 const item = ''
-         assert.isNotTruthy(item, 'Evaluates as false')
+assert.isNotTruthy(item, 'Evaluates as false')
 ```
 
 #### isTrue
@@ -425,7 +426,7 @@ assert({foo:'bar'}, 'foo', 'object contains the property "foo"')
 ```
 
 ```javascript
-assert('
+assert('It is a wonderful world, 'wonder', 'string contains substring "wonder"')
 ```
 
 #### doesNotContain
@@ -454,11 +455,11 @@ Test will be marked as skipped in Tap.
 
 ```javascript
 const feature = getFeatureObject()
-         if(feature.isEnabled) {
-              assert.isNotNull(feature.body, 'If are using this, it must not be null')
-         } else {
-             assert.skipped('This test skipped because feature is not enabled')
-         }
+if(feature.isEnabled) {
+   assert.isNotNull(feature.body, 'If using this, it must not be null')
+} else {
+   assert.skipped('This test skipped because feature is not enabled')
+}
 ```
 
 #### meetsConstraints
@@ -529,7 +530,7 @@ Constraints are as follows:
 * * *
 
 -   _The [!] notation used above means the ! is optional (meaning 'not').  The brackets are notational only. Do not include in constraint._
--   _The <val> notation means place a value here. No brackets. Do not quote the value._
+-   _The &lt;val> notation means place a value here. No brackets. Do not quote the value._
 -   _Notation in parenthesis, such as (num), and (first, last) means include the parenthesis and replace the labels with values._
 -   _constraint directives are case-insensitive_
 
