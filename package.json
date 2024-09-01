@@ -1,36 +1,30 @@
 {
   "name": "@tremho/tap-assert",
-  "version": "1.0.3-pre-release.1",
+  "version": "1.0.4",
   "description": "a simple assertion library for using Tap JS the way I like to, leveraging only the tap.ok() method and emitting waypoint messages",
   "main": "build/TapAssert.js",
+  "types": "build/index.d.ts",
   "scripts": {
     "prepublish": "npx rimraf build && npm run lint && npm test && npm run doc && echo OKAY",
     "clean": "npx rimraf build ; npx rimraf node_modules ; npm install",
-    "build": "tsc",
+    "build": "tsc && npm run postbuild",
     "lint": "ts-standard --fix src",
     "test": "npm run build && npm run unitTest",
     "unitTest": "tap --reporter=base --color --passes src/*.test.ts",
-    "doc": "npm run build && documentation lint build/TapAssert.js --shallow && documentation readme build/TapAssert.js --readme-file ./README.md --section API --shallow --markdown-toc false > /dev/null"
+    "doc": "npm run build && documentation lint build/TapAssert.js --shallow && documentation readme build/TapAssert.js --readme-file ./README.md --section API --shallow --markdown-toc false > /dev/null",
+    "postbuild": "cp index.d.ts build"
 
   },
   "files": [
-    "build/**/*",
-    "src/**/*",
-    "templateData/*",
-    "index.d.ts",
+    "build/*",
     "README.md",
-    "LICENSE",
-    "tsconfig.json"
+    "LICENSE"
   ],
   "keywords": [
-    "MistLift",
-    "Cloud",
-    "Lift",
+    "Tap",
+    "assert",
+    "testing",
     "development",
-    "framework",
-    "cli",
-    "aws",
-    "express",
     "node"
   ],
   "author": "tremho",

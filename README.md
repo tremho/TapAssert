@@ -108,6 +108,7 @@ See [Tap docs](https://node-tap.org/basics/) for more info.
 
 #### Release changeLog:
 
+- `1.0.4` - fixed typescript typings
 - `1.0.3` - minor readme update
 - `1.0.2` - minor doc updates
 - `1.0.1` - updated readme, updated tests
@@ -173,7 +174,7 @@ Assert that item passed is null.
 
 ```javascript
 const item = getAValue()
-   assert.isNull(item, 'Insure item is null here')
+assert.isNull(item, 'Insure item is null here')
 ```
 
 #### isNotNull
@@ -531,7 +532,7 @@ Constraints are as follows:
 * * *
 
 -   _The [!] notation used above means the ! is optional (meaning 'not').  The brackets are notational only. Do not include in constraint._
--   _The <val> notation means place a value here. No brackets. Do not quote the value._
+-   _The &lt;val> notation means place a value here. No brackets. Do not quote the value._
 -   _Notation in parenthesis, such as (num), and (first, last) means include the parenthesis and replace the labels with values._
 -   _constraint directives are case-insensitive_
 
