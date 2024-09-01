@@ -108,6 +108,7 @@ See [Tap docs](https://node-tap.org/basics/) for more info.
 
 #### Release changeLog:
 
+- `1.0.5` - general maintenance update
 - `1.0.4` - fixed typescript typings
 - `1.0.3` - minor readme update
 - `1.0.2` - minor doc updates
